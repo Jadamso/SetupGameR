@@ -1,0 +1,13 @@
+bibentry(bibtype = "Manual",
+         textVersion = "Jordan Adamson (2018). SetupGameR: SetupGameR. R package version 0.1.2.",
+         header = "To cite package 'SetupGameR' in publications use:",
+         key = "SetupGameR",
+         title = "{SetupGameR}: SetupGameR",
+         author = person(given = "'Jordan",
+                         family = "Adamson'",
+                         role = c("aut", "cre"),
+                         email = "jordan.m.adamson@gmail.com"),
+         year = "2018",
+         month = "3",
+         note = "R package version 0.1.2",
+         url = "https://sites.google.com/a/g.clemson.edu/ja-resources")

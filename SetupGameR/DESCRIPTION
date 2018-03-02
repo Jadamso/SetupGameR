@@ -1,0 +1,18 @@
+Package: SetupGameR
+Title: SetupGameR
+Version: 0.1.2
+Authors@R: person("Jordan", "Adamson",
+        email="jordan.m.adamson@gmail.com",
+        role=c("aut","cre"))
+Description: A Library for Running Games with Students. See my website <https://sites.google.com/a/g.clemson.edu/ja-resources>. or github <https://github.com/Jadamso>.
+Depends: R (>= 3.4.1)
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Published: 2018-03-01
+Date: 2018-03-01
+URL: https://sites.google.com/a/g.clemson.edu/ja-resources
+RoxygenNote: 6.0.1
+Imports: MiscUtils
+Suggests: shinyjs,
+    formattable
