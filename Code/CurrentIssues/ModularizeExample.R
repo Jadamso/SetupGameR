@@ -12,6 +12,7 @@
 
         observeEvent( input$init, {
             cat("click\n")
+            #shinyjs::hide("init")
             removeUI(selector='#init', immediate=TRUE)
             GlobClass$Init[userPID] <- TRUE
         }, autoDestroy=TRUE)
