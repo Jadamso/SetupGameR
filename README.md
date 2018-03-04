@@ -16,7 +16,7 @@ Function and Libraries for Shiny Experiments
 
 
 
-# Linux Setup On Amazon instance: 
+# Host Game on Amazon Web Server: 
 ---
 
 ## First Time Amazon setup
