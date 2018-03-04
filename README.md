@@ -21,6 +21,8 @@ Function and Libraries for Shiny Experiments
 
 ## First Time Amazon setup
     
+Follow the instructions at https://github.com/Jadamso/ClusterInstall/blob/master/README_AWS.md
+
     git clone https://github.com/Jadamso/ClusterInstall.git
     cat ClusterInstall/README_AWS.md
 
@@ -32,6 +34,7 @@ Function and Libraries for Shiny Experiments
 -->
 
 ## First Time Shiny-Server Setup
+
 After SSH-ing into Amazon Instance and becoming the dedicated shiny-user (`su - shiny`)
 
     wget https://s3.amazonaws.com/rstudio-shiny-server-pro-build/centos6.3/x86_64/shiny-server-commercial-1.5.4.872-rh6-x86_64.rpm 
@@ -40,3 +43,6 @@ After SSH-ing into Amazon Instance and becoming the dedicated shiny-user (`su - 
 
     sudo /opt/shiny-server/bin/license-manager activate XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX
 
+
+For a full game setup, see
+ * https://github.com/Jadamso/TerritoryR/blob/master/README_amazon_setup.md
