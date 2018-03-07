@@ -1,4 +1,7 @@
 # To Do
+The following 3 tasks
+
+Use `./Code/CurrentIssues/Module_Survey_ExampleUsage.R` as a minimum working example for debugging
 
 
 ## Task 1
@@ -32,9 +35,13 @@ In server.R
 ---
 
 #### Task 2A
-Eliminate latency in Init Module
+Optimize init modules
 
-    SetupGameR::InitializeUI("init")
+    SetupGameR::InitializeUI("init") ## using shinjs::hide
+
+    SetupGameR::InitializeUI2("init") ## using removeModal
+    
+I currently have a latency spike at this points in the code
 
 #### Task 2B
 
@@ -74,12 +81,15 @@ Put all 2 start-of-game modules together into a module so that `SetupGameR::Init
 Optimize Survey Modules
 
 #### Task 3A
-Eliminate latency in current modules
+
+Optimize current modules
 
     callModule( SetupGameR::StartSurvey, "survey", ...
     
     callModule( SetupGameR::ViewPayment, "payment", ...
 
+
+I currently have a latency spike at these points in the code
     
 #### Task 3B
 
