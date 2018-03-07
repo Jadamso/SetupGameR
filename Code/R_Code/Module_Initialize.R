@@ -27,45 +27,24 @@ Initialize <- compiler::cmpfun( function(input, output, session,
         shinyjs::hide("init")
         GlobClass$Init[userPID] <- TRUE
     }, autoDestroy=TRUE)
-
-    # TO ADD
-    #observeEvent(GlobClass$Init, {
-    #        removeUI(selector='#init', immediate=TRUE)
-    #    if( all(GlobClass$Init) ){
-    #        shinyjs::show('game_sidepanel')
-    #        shinyjs::show('game_mainpanel')
-    #    }
-    #}, autoDestroy=TRUE)
     
 })
 
-
-
-
-#------------------------------------------------------------------
-##################
-# Initialize Button
-##################
-# @export
-# @rdname InitializeUI
-InitializeUImm <- compiler::cmpfun( function(id) {   
-    actionButton( "init",
-        h4("Initialize"),
-        width="100%" )
-})
-     
-# @export
-# @rdname InitializeUI
-Initializemm <- compiler::cmpfun( function(input, output, session,
+#' @export
+#' @rdname InitializeUI
+Initialize2 <- compiler::cmpfun( function(input, output, session,
     GlobClass, userPID ) {
     
     observeEvent( input$init, {
-        removeUI(selector='#init', immediate=TRUE)
+        removeUI(selector=paste0('#', session$ns('init')), immediate=TRUE) 
         GlobClass$Init[userPID] <- TRUE
     }, autoDestroy=TRUE)
+    
 })
 
 
+
+    
         
 #------------------------------------------------------------------
 ##################

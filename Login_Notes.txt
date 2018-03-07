@@ -1,6 +1,59 @@
 #-------------------------------------------------------------------
 ##################
-# Authentication Instructions
+# To Read In Names+Passwords From URL from shiny-server
+##################
+## Edit the following file on the machine that hosts the shiny server:
+## /opt/shiny-server/templates/login.html
+
+
+## Just before the closing </body> tag at the end of the file, add the following:
+
+    <script type="text/javascript">
+    function getQueryVariable(variable) {
+      var query = window.location.search.substring(1);
+      var vars = query.split("&");
+      for (var i=0;i<vars.length;i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) {
+          return pair[1];
+        }
+      }
+    }
+    var username = getQueryVariable("username");
+    if (username !== undefined) {
+      document.getElementById("username").value = username;
+    }
+    var password = getQueryVariable("password")
+    if (password !== undefined) {
+      document.getElementById("password").value = password;
+    }
+    if (username !== undefined && password !== undefined) {
+      document.getElementById("login").getElementsByTagName("form")[0].submit();
+    }
+    </script>
+
+
+
+## Restart the shiny server To enable
+## `sudo service shiny-server restart`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#-------------------------------------------------------------------
+##################
+# General Authentication Instructions
 ##################
 
 
@@ -24,20 +77,15 @@ https://gist.github.com/trestletech/9793754
 https://gist.github.com/withr/9001831
 
 
-## Server Trackinmg
-http://shiny.rstudio.com/articles/google-analytics.html
-
-
 ## 7.4.6 Can I Bulk-Import in Flat-File Authentication?
 http://docs.rstudio.com/shiny-server/#sspasswd
+
 #-------------------------------------------------------------------
 ##################
 ## Add admin
 ##################
 
-
 sudo /opt/shiny-server/bin/sspasswd /etc/shiny-server/passwd admin
-# AuctionTrial
 
 sudo cat /etc/shiny-server/passwd
 

@@ -34,9 +34,8 @@ In server.R
 #### Task 2A
 Optimize init modules
 
-    SetupGameR::InitializeUI("init") ## using shinjs::hide
-
-    SetupGameR::InitializeUI2("init") ## using removeModal
+    SetupGameR::InitializeUI("init")
+    SetupGameR::InitializeUI2("init")
     
 I currently have a latency spike at this points in the code
 
