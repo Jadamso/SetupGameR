@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en-US" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>{{title}}</title>
+  <style type="text/css">
+    body {
+      font-family: Helvetica, Arial, sans-serif;
+      background-color: #F5F5F5;
+    }
+    pre, tt, code, .code, #detail {
+      font-family: 'Consolas', 'Courier New', 'Courier', monospace;
+    }
+    #content{
+      margin-left: auto;
+      margin-right: auto;
+      padding-top: 100px;
+      width: 350px;
+    }
+    h1 {
+      font-size: 28px;
+    }
+    #message {
+      font-size: 18px;
+    }
+    .alert{
+      font-size: 14px;
+      width: 100%;
+      background-color: #FEE;
+      border: 1px solid #C11;
+      padding: 1em;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+    }
+    #login {
+      width: 100%;
+      background-color: #FFF;
+      border: 1px solid #CCC;
+      -moz-border-radius: 5px;
+      border-radius: 5px;
+      padding: .5em 1em .5em 1em;
+      -webkit-box-shadow: 1px 1px 8px 3px #DDD;
+      box-shadow: 1px 1px 8px 3px #DDD;
+      margin-top: 1em;      
+    }
+    #login label {
+      font-size: 12px;
+    }
+    #login #username, #login #password {
+      background-color: #F5F5F5;
+      line-height: 24px;
+      font-size: 16px;
+      border: 1px solid #CCC;
+      -moz-border-radius: 2px;
+      border-radius: 2px;
+      padding: 2px;
+      width: 340px;
+      margin-right: 1em;
+    }
+    #oauth {
+      min-height: 50px;
+      text-align: center;
+      margin: 2em auto 2em auto;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="__assets__/zocial/zocial.css" />
+</head>
+<body>
+  <div id="content">
+    <h1>{{title}}</h1>
+    {{#if err}}
+      <div class="alert"><strong>Error:</strong> {{err}}</div>
+    {{/if}}
+    <div id="login">
+      {{#if google}}
+      <div id="oauth">
+        <form action="{{googleEndpoint}}" method="POST">
+          <input id="csrfToken" type="hidden" name="_csrf" value="{{csrf_token}}"/>
+          <input id="successUrl" type="hidden" name="success_url" value="{{success_url}}"/>
+          <button class="zocial google">Login with Google</button>
+        </form>
+      </div>
+      {{else}}
+        {{#if proxied}}
+          You must be logged in to access this resource.
+        {{else}}
+          <form action="{{url}}" method="POST"{{#if noautocomplete}} autocomplete="off"{{/if}}>
+          <input id="csrfToken" type="hidden" name="_csrf" value="{{csrf_token}}"/>
+          <input id="successUrl" type="hidden" name="success_url" value="{{success_url}}"/>
+          <p>
+            <label for="username">Username</label><br/>
+            <input type="text" id="username" name="username" value="{{username}}"/>
+          </p>
+          <p>
+            <label for="password">Password</label><br/>
+            <input type="password" id="password" name="password"/>
+          </p>
+          <p><input type="submit" value="Log in"/></p>
+        </form>
+        {{/if}}
+      {{/if}}
+    </div>
+  </div>
+  <script type="text/javascript">
+    var successUrl = document.getElementById('successUrl');
+    if (successUrl.value === '') {
+      successUrl.value = window.location.href;
+    }
+  </script>
+</body>
+</html>

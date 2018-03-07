@@ -2,11 +2,22 @@
 ##################
 # To Read In Names+Passwords From URL from shiny-server
 ##################
-## Edit the following file on the machine that hosts the shiny server:
-## /opt/shiny-server/templates/login.html
 
+## Backup original login file 
+sudo cp /opt/shiny-server/templates/login.html /opt/shiny-server/templates/login.backup.html
+## sudo cp /opt/shiny-server/templates/login.html /opt/shiny-server/templates/login.backup2.html
 
-## Just before the closing </body> tag at the end of the file, add the following:
+## Replace the default login file
+mv ~/Desktop/Packages/SetupGameR/login.prepopulated.html /opt/shiny-server/templates/login.html
+
+#-------------------------------------------------------------------
+##################
+# What Has Been Changed?
+##################
+## the file on the machine that hosts the shiny server:
+## /opt/shiny-server/templates/login.html, has been changed;
+## just before the </body> tag at the end of the file,
+## the following has been added:
 
     <script type="text/javascript">
     function getQueryVariable(variable) {
@@ -36,7 +47,6 @@
 
 ## Restart the shiny server To enable
 ## `sudo service shiny-server restart`
-
 
 
 
