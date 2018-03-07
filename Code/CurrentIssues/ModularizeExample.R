@@ -1,3 +1,7 @@
+
+    ## Pass URL parameters to shiny (not yet available for shiny-server-pro)
+    ## https://github.com/daattali/advanced-shiny/tree/master/url-inputs
+    
     library(shiny)
 
     ### Modularized Code
@@ -12,8 +16,8 @@
 
         observeEvent( input$init, {
             cat("click\n")
-            #shinyjs::hide("init")
-            removeUI(selector='#init', immediate=TRUE)
+            shinyjs::hide("init")
+            #removeUI(selector='#init', immediate=TRUE)
             GlobClass$Init[userPID] <- TRUE
         }, autoDestroy=TRUE)
     })

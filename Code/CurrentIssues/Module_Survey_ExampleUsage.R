@@ -1,32 +1,42 @@
+library(shiny)
 
 ## ui.R
 
-shinyUI(fluidPage(
-    sidebarLayout(                
+ui <- fluidPage(
+    shinyjs::useShinyjs(),
+    sidebarLayout(              
         sidebarPanel(
             #---------------------------------------------------
             ## Initial Waiting Screen
             SetupGameR::InitializeUI("init"),
             ## Main Code
             shinyjs::hidden( div( id="game_sidepanel",
+                        fluidRow( "A BUNCH OF INPUTS") ) ),
                 ## BUNCH OF CODE HERE ))
             ## Post Game Survey Panels
             SetupGameR::StartSurveyUI("survey")
-        )
+        ),
         mainPanel(
             #---------------------------------------------------
             ## Main Panel
             shinyjs::hidden( div( id="game_mainpanel",
+                        fluidRow( "A BUNCH OF OUTPUTS") ) ),
                 ## BUNCH OF CODE HERE ))
             # Post Game Survey Panels
             SetupGameR::ViewPaymentUI("payment")
         )
-        
-
+    )       
+)
 
 
 
 ## server.R
+
+Class <- list(Ready=c(FALSE,FALSE))
+
+PIDs <- paste0("JA", 1:2)
+
+GlobClass <- reactiveValues(Init=Class$Ready)
 
 GlobSurvey <- reactiveValues(
     SurveyReady=Class$Ready,
@@ -37,8 +47,19 @@ GlobSurvey <- reactiveValues(
     RandomHistory=NA)
 
     
-shinyServer( function( input, output, session){
+GlobalTriggers <- reactiveValues( ShowSurvey=FALSE)
 
+server <- function( input, output, session){
+
+    #---------------------------------------------------
+    # User Login
+    ## For Debugging
+    user <- sample( paste0("JA", 1:2),1)
+    ## Would Like to Use
+    #user <- parseQueryString(session$clientData$url_search)[['user']]()
+    cat( file=stderr(), "User: ", user, "\n")
+    userPID  <- which( PIDs == user )
+    
     #---------------------------------------------------
     # Initialize Screen
     callModule( SetupGameR::Initialize, "init",
@@ -58,6 +79,13 @@ shinyServer( function( input, output, session){
     #---------------------------------------------------
     # Main Body of CODE
     ## BUNCH OF CODE HERE
+    
+    ## Start Survey after 10 seconds
+    m_2 <- observe({ invalidateLater(10000)
+        if( (userPID==1) &  all(GlobClass$Init) ){
+            GlobalTriggers$ShowSurvey <<- TRUE
+        }
+    })
     
     #---------------------------------------------------
     # Begin Survey
@@ -82,7 +110,7 @@ shinyServer( function( input, output, session){
         userPID=userPID,
         SaveSurveyFile=paste0(
             path.expand("~/Desktop/Packages/TerritoryR/Results/"),
-            "SessionResults/Session_",SessionName,"/Survey.Rds")
+            "SessionResults/Session_Trial/Survey.Rds")
     )
     
     #---------------------------------------------------
@@ -91,6 +119,14 @@ shinyServer( function( input, output, session){
         GlobSurvey=GlobSurvey,
         userPID=userPID
     )
-    
-    
+}
+
+
+
+
+
+
+### Run Application
+shinyApp(ui, server)
+
     
