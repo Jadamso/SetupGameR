@@ -10,19 +10,16 @@ Use `./Code/CurrentIssues/Module_Survey_ExampleUsage.R` as a minimum working exa
 Declare user from url inside server.R and access outside of `observe`
 
 
-In Web-Browser:
-
-    http://127.0.0.1:3329?user=JA1
+In Web-Browser: http://127.0.0.1:3329?user=JA1
 
 
 In server.R
 
-```{r}
     user <- parseQueryString(session$clientData$url_search)[['user']]
 
     ## Outside of any function  ->
     cat( file=stderr(), "User: ", user, "\n")
-``` 
+
     
    
 
