@@ -8,7 +8,13 @@ sudo cp /opt/shiny-server/templates/login.html /opt/shiny-server/templates/login
 ## sudo cp /opt/shiny-server/templates/login.html /opt/shiny-server/templates/login.backup2.html
 
 ## Replace the default login file
-mv ~/Desktop/Packages/SetupGameR/login.prepopulated.html /opt/shiny-server/templates/login.html
+sudo mv ~/Desktop/Packages/SetupGameR/login.prepopulated.html /opt/shiny-server/templates/login.html
+
+## Replace the prepopulated login file
+sudo mv ~/Desktop/Packages/SetupGameR/login.default.html /opt/shiny-server/templates/login.html
+
+## Restart the shiny server To enable
+sudo restart shiny-server 
 
 #-------------------------------------------------------------------
 ##################
@@ -43,10 +49,6 @@ mv ~/Desktop/Packages/SetupGameR/login.prepopulated.html /opt/shiny-server/templ
     }
     </script>
 
-
-
-## Restart the shiny server To enable
-## `sudo service shiny-server restart`
 
 
 
