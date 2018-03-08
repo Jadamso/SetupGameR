@@ -46,3 +46,15 @@ After SSH-ing into Amazon Instance and becoming the dedicated shiny-user (`su - 
 
 For a full game setup, see
  * https://github.com/Jadamso/TerritoryR/blob/master/README_amazon_setup.md
+ 
+
+<!--CHECK LATENCY: <.5 is good; >1 is bad
+ for x in 'seq 60'; do curl -Ik -w "HTTPcode=%{http_code} TotalTile=%{time_total}\n" http://www.example.com/ -so /dev/null; done
+-->
+
+
+<!-- GIT FORCE PULL
+ git fetch --all
+ git reset --hard origin/master
+ git pull origin master
+-->

@@ -6,7 +6,9 @@ Use `./Code/CurrentIssues/Module_Survey_ExampleUsage.R` as a minimum working exa
 
 ## Task 1
 ---
+Improve ease of debugging
 
+#### Task 1A
 Declare user from url inside server.R and access outside of `observe`
 
 
@@ -20,16 +22,24 @@ In server.R
     ## Outside of any function  ->
     cat( file=stderr(), "User: ", user, "\n")
 
-    
-   
+
+#### Task 1B
+Allow initialize button in `SetupGameR::InitializeUI("init")` to execute by either hitting "Enter" on the keyboard or by clicking the button
+ 
+    $(document).keyup(function(event) {
+        if ($("#number").is(":focus") && (event.keyCode == 13)) {
+            $("#goButton").click();
+        }
+    });
 
 
 
-    
-    
+
+
     
 ## Task 2
 ---
+Improve App Initialization
 
 #### Task 2A
 Optimize init modules
@@ -74,7 +84,7 @@ Put all 2 start-of-game modules together into a module so that `SetupGameR::Init
 ## Task 3
 ---
 
-Optimize Survey Modules
+Improve Post-Game Survey
 
 #### Task 3A
 
@@ -118,3 +128,18 @@ Put all 3 end-of-game modules together into a module so that `SetupGameR::PostGa
 
 
 
+
+
+## Task 4: (Low Priority)
+---
+
+General Usage
+ 
+#### Task 4A 
+Real-time assignment of number of players in a game based on computer ID
+
+<!--
+#### Task 4B
+The login procedure user *Shiny-Server-Pro* not *Shiny Server*. 
+Write a work-around for *Shiny-Server* on local version.
+-->
