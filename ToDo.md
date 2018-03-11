@@ -156,3 +156,9 @@ Write a work-around for *Shiny-Server* on local version.
 #### Task 4C
 
 Best way to collect user data all at once.
+
+
+#### Task 4D
+
+Mathjax can be used as a gate into the web. * Mathjax -> about -> mathjax about page -> any webpage *
+

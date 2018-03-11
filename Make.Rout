@@ -1,0 +1,223 @@
+
+R version 3.4.1 (2017-06-30) -- "Single Candle"
+Copyright (C) 2017 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+
+[38;5;11m     CHEAT SHEETS: [0m
+source('/home/Jadamso/Desktop/Common/R_Code/RCheats.R') 
+
+[38;5;11m     R INFORMATION: [0m
+/home/Jadamso/lib64/R/bin/exec/R -f Code/Make.R --restore --save --no-readline --no-save 
+~/Rprofile.site 
+wideScreen() 
+
+[38;5;11m     USER INFORMATION: [0m
+Jordan Adamson, 2018-03-11
+
+> #-------------------------------------------------------------------
+> ##################
+> # Setup 
+> ##################
+> library(devtools)
+> library(roxygen2)
+> library(MiscUtils)
+> 
+>  
+> pmdir <- path.expand("~/Desktop/Packages/")
+> 
+> #-------------------------------------------------------------------
+> ##################
+> # Make 
+> ##################
+> pack  <- "SetupGameR"
+> pdir  <- paste0(pmdir, pack,"/")
+> packg <- paste0(pdir, pack)
+> 
+> Version <- numeric_version("0.1.2")
+> 
+> # Setup R Package
+> source(paste0(pdir,"Code/PackageSetup.R") )
+Creating package 'SetupGameR' in '/home/Jadamso/Desktop/Packages/SetupGameR'
+No DESCRIPTION found. Creating with values:
+
+
+Package: SetupGameR
+Title: SetupGameR
+Version: 0.1.2
+Authors@R: person("Jordan", "Adamson",
+        email="jordan.m.adamson@gmail.com",
+        role=c("aut","cre"))
+Description: A Library for Running Games with Students. See my website <https://sites.google.com/a/g.clemson.edu/ja-resources>. or github <https://github.com/Jadamso>.
+Depends: R (>= 3.4.1)
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+Published: 2018-03-11
+Date: 2018-03-11
+URL: https://sites.google.com/a/g.clemson.edu/ja-resources
+
+To cite package 'SetupGameR' in publications use:
+
+  Jordan Adamson (2018). SetupGameR: SetupGameR. R package version
+  0.1.2.
+
+A BibTeX entry for LaTeX users is
+
+  @Manual{SetupGameR,
+    title = {{SetupGameR}: SetupGameR},
+    author = {'Jordan Adamson'},
+    year = {2018},
+    month = {3},
+    note = {R package version 0.1.2},
+    url = {https://sites.google.com/a/g.clemson.edu/ja-resources},
+  }
+
+* Updating license field in DESCRIPTION.
+* Creating `LICENSE` from template.
+Creating package 'SetupGameR' in '/home/Jadamso/Desktop/Packages/SetupGameR'
+Updating SetupGameR documentation
+Loading SetupGameR
+Updating roxygen version in /home/Jadamso/Desktop/Packages/SetupGameR/SetupGameR/DESCRIPTION
+Writing NAMESPACE
+Setting env vars --------------------------------------------------------------
+CFLAGS  : -Wall -pedantic
+CXXFLAGS: -Wall -pedantic
+Building SetupGameR -----------------------------------------------------------
+'/home/Jadamso/lib64/R/bin/R' --no-site-file --no-environ --no-save  \
+  --no-restore --quiet CMD build  \
+  '/home/Jadamso/Desktop/Packages/SetupGameR/SetupGameR' --no-resave-data  \
+  --no-manual 
+
+* checking for file ‘/home/Jadamso/Desktop/Packages/SetupGameR/SetupGameR/DESCRIPTION’ ... OK
+* preparing ‘SetupGameR’:
+* checking DESCRIPTION meta-information ... OK
+* checking for LF line-endings in source and make files
+* checking for empty or unneeded directories
+Removed empty directory ‘SetupGameR/R’
+Removed empty directory ‘SetupGameR/data’
+Removed empty directory ‘SetupGameR/inst/extdata’
+Removed empty directory ‘SetupGameR/man’
+* building ‘SetupGameR_0.1.2.tar.gz’
+
+Setting env vars --------------------------------------------------------------
+_R_CHECK_CRAN_INCOMING_USE_ASPELL_: TRUE
+_R_CHECK_CRAN_INCOMING_           : FALSE
+_R_CHECK_FORCE_SUGGESTS_          : FALSE
+Checking SetupGameR -----------------------------------------------------------
+'/home/Jadamso/lib64/R/bin/R' --no-site-file --no-environ --no-save  \
+  --no-restore --quiet CMD check '/tmp/RtmpEYP5Jt/SetupGameR_0.1.2.tar.gz'  \
+  --as-cran --timings --no-manual 
+
+* using log directory ‘/tmp/RtmpEYP5Jt/SetupGameR.Rcheck’
+* using R version 3.4.1 (2017-06-30)
+* using platform: x86_64-pc-linux-gnu (64-bit)
+* using session charset: UTF-8
+* using options ‘--no-manual --as-cran’
+* checking for file ‘SetupGameR/DESCRIPTION’ ... OK
+* this is package ‘SetupGameR’ version ‘0.1.2’
+* package encoding: UTF-8
+* checking package namespace information ... OK
+* checking package dependencies ... OK
+* checking if this is a source package ... OK
+* checking if there is a namespace ... OK
+* checking for executable files ... OK
+* checking for hidden files and directories ... OK
+* checking for portable file names ... OK
+* checking for sufficient/correct file permissions ... OK
+* checking whether package ‘SetupGameR’ can be installed ... OK
+* checking installed package size ... OK
+* checking package directory ... OK
+* checking DESCRIPTION meta-information ... OK
+* checking top-level files ... OK
+* checking for left-over files ... OK
+* checking index information ... OK
+* checking package subdirectories ... OK
+* checking whether the package can be loaded ... OK
+* checking whether the package can be loaded with stated dependencies ... OK
+* checking whether the package can be unloaded cleanly ... OK
+* checking whether the namespace can be loaded with stated dependencies ... OK
+* checking whether the namespace can be unloaded cleanly ... OK
+* checking loading without being on the library search path ... OK
+* checking examples ... NONE
+* DONE
+
+Status: OK
+
+> 
+> # Create R Package Contents
+> source(paste0(pdir,"Code/CodeSetup.R") )
+* Adding MiscUtils to Imports
+Next: 
+Refer to functions with MiscUtils::fun()
+* Adding shinyjs to Suggests
+Next: 
+Use requireNamespace("shinyjs", quietly = TRUE) to test if package is installed,
+then use shinyjs::fun() to refer to functions.
+* Adding formattable to Suggests
+Next: 
+Use requireNamespace("formattable", quietly = TRUE) to test if package is installed,
+then use formattable::fun() to refer to functions.
+Loading SetupGameR
+Updating SetupGameR documentation
+Loading SetupGameR
+Warning: @title [Module_Initialize.R#1]: requires a value
+Warning: @description [Module_Initialize.R#1]: requires a value
+Warning: @return [Module_Initialize.R#9]: requires a value
+Warning: @title [Module_Initialize.R#1]: requires a value
+Warning: @description [Module_Initialize.R#1]: requires a value
+Warning: @return [Module_Initialize.R#57]: requires a value
+Warning: @return [Module_Survey.R#9]: requires a value
+Warning: @return [Module_Survey.R#108]: requires a value
+Writing NAMESPACE
+Writing random.payouts.Rd
+Writing utimeLeft.Rd
+Writing timeLeft.Rd
+Writing ctimeLeft.Rd
+Writing post_global.Rd
+Writing stime_function.Rd
+Writing print_exists.Rd
+Writing sign_formatter2.Rd
+Writing user_urldata_fun.Rd
+Writing StartSurveyUI.Rd
+Writing ViewPaymentUI.Rd
+Writing create_class_fake.Rd
+Writing class_sample.Rd
+Writing class_cleaner.Rd
+Writing game_setup.Rd
+Writing exp_design.Rd
+Writing create_playergroups.Rd
+Writing sspasswd.Rd
+Writing sspasswd_cmd.Rd
+Writing passwd_maker.Rd
+Writing idsheet_default.Rd
+Writing IDsheet.Rd
+Writing player_maker.Rd
+Writing etime_fun.Rd
+Writing GameLength.Rd
+Writing GameInit.Rd
+Writing ending.Rd
+Writing savegame.Rd
+Writing shutdown.Rd
+Writing GameStop.Rd
+Writing Game.Rd
+Warning messages:
+1: InitializeUI.Rd is missing name/title. Skipping 
+2: InitializeUIm.Rd is missing name/title. Skipping 
+> 
+> MiscUtils::pack_up(pdir)
+/home/Jadamso/Desktop/Packages/SetupGameR/ is required to already be on github

@@ -23,7 +23,7 @@ StartSurveyUI <- compiler::cmpfun( function(id) {
         fluidRow(
             column(12, textInput(ns("Name"), "Name", value=NA) ),
             column(12, selectInput(ns("Gender"), "Gender",
-                choices=c("Male", "Female", NA) ), selected=NA ),
+                choices=c(NA, "Male", "Female") ), selected=NA ),
             column(12, textAreaInput(ns("Comments"),
                 "Please Describe How You Made Decisions", value=NA) )
         ),
