@@ -11,6 +11,8 @@ Improve ease of debugging
 #### Task 1A
 Declare user from url inside server.R and access outside of `observe`
 
+See https://stackoverflow.com/questions/49212027/how-to-declare-unique-users-in-rshiny 
+
 
 In Web-Browser: http://127.0.0.1:3329?user=JA1
 
@@ -114,7 +116,7 @@ Modularize Switch Panels so that `SetupGameR::StopGame` performs
             shinyjs::show('survey_mainpanel')
             shinyjs::show('survey_sidepanel')
         }
-    })  
+    })
 
 
 #### Task 3C
@@ -134,8 +136,15 @@ Put all 3 end-of-game modules together into a module so that `SetupGameR::PostGa
 ---
 
 General Usage
- 
-#### Task 4A 
+
+#### Task 4A
+
+Assign a button so that students can click and reload page if frozen.
+
+    session$reload()
+
+    
+#### Task 4B
 Real-time assignment of number of players in a game based on computer ID
 
 <!--
@@ -143,3 +152,7 @@ Real-time assignment of number of players in a game based on computer ID
 The login procedure user *Shiny-Server-Pro* not *Shiny Server*. 
 Write a work-around for *Shiny-Server* on local version.
 -->
+
+#### Task 4C
+
+Best way to collect user data all at once.
