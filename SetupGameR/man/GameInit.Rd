@@ -5,8 +5,10 @@
 \title{Initiate Game}
 \usage{
 GameInit(TradePeriod = Sys.time(), startTime = Sys.time(),
-  gdir = "/srv/shiny-server/DoubleAuction/Game/", game_file = paste0(gdir,
-  "game_file.RData"))
+  SessionName = "Trial", etime = SetupGameR::etime_fun("00", "10", "00"),
+  gdir = "/srv/shiny-server/DoubleAuction/Game/", param_file = paste0(gdir,
+  "time_file.RData"), u_timer = 60000, efreq = 1000, nperiods = 20,
+  npractice = 2, ...)
 }
 \arguments{
 \item{TradePeriod}{starting what trading period is the game?}
@@ -14,6 +16,10 @@ GameInit(TradePeriod = Sys.time(), startTime = Sys.time(),
 \item{startTime}{when to start game}
 
 \item{gdir}{directory of game}
+
+\item{u_timer, efreq}{timing parameters}
+
+\item{nperiods, npractice}{lengths of periods}
 
 \item{game_file}{name of game to initiate}
 }

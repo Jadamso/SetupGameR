@@ -56,13 +56,37 @@ GameLength <- compiler::cmpfun( function(
 #' @param startTime when to start game
 #' @param gdir directory of game
 #' @param game_file name of game to initiate
+#' @param nperiods,npractice lengths of periods 
+#' @param u_timer,efreq timing parameters
 #'
 #' @return string, Name of Game File
 #'
 # @examples
 #' @export
 
+
 GameInit <- compiler::cmpfun( function(
+    TradePeriod=Sys.time(),
+    startTime=Sys.time(),
+    SessionName="Trial",
+    etime=SetupGameR::etime_fun("00","10","00"),
+    gdir="/srv/shiny-server/DoubleAuction/Game/",
+    param_file=paste0(gdir,"time_file.RData"),
+    u_timer=60000,
+    efreq=1000,
+    nperiods=20,
+    npractice=2,
+    ...){
+    
+    ## Read by server.R 
+    save.image(file=param_file)
+   
+    cat("GameLength: ", etime, "\n")
+})
+
+
+
+GameInit_deprecated <- compiler::cmpfun( function(
     TradePeriod=Sys.time(),
     startTime=Sys.time(),
     gdir="/srv/shiny-server/DoubleAuction/Game/",
