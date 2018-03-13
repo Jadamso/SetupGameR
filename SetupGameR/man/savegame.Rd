@@ -4,9 +4,10 @@
 \alias{savegame}
 \title{Save Game}
 \usage{
-savegame(startTime = as.character(Sys.time()),
-  TradePeriod = as.character(Sys.time()), savepath = paste0(tempdir(), "/"),
-  GameName = "Game_", PeriodName = "_Period_")
+savegame(startTime = format(Sys.time(), "\%Y-\%m-\%d_\%H-\%M-\%S"),
+  TradePeriod = format(Sys.time(), "\%Y-\%m-\%d_\%H-\%M-\%S"),
+  savepath = paste0(tempdir(), "/"), GameName = "Game_",
+  PeriodName = "_Period_")
 }
 \arguments{
 \item{startTime}{what time did this game start at?}
@@ -24,5 +25,6 @@ string, Name of Game File
 Save Game
 }
 \details{
-see https://shiny.rstudio.com/articles/persistent-data-storage.html, format(Sys.time(), "%Y-%m-%d_%H-%M-%S")
+see https://shiny.rstudio.com/articles/persistent-data-storage.html
+formerly used as.character(Sys.time()) , now format(Sys.time(), "%Y-%m-%d_%H-%M-%S")
 }

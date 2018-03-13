@@ -10,13 +10,14 @@
 #'
 #' @return string, Name of Game File
 #'
-#' @details see https://shiny.rstudio.com/articles/persistent-data-storage.html, format(Sys.time(), "%Y-%m-%d_%H-%M-%S")
+#' @details see https://shiny.rstudio.com/articles/persistent-data-storage.html
+#' formerly used as.character(Sys.time()) , now format(Sys.time(), "%Y-%m-%d_%H-%M-%S")
 # @examples
 #' @export
 
 savegame <- compiler::cmpfun( function(
-    startTime=as.character(Sys.time()),
-    TradePeriod=as.character(Sys.time()),
+    startTime=format(Sys.time(), "%Y-%m-%d_%H-%M-%S"),
+    TradePeriod=format(Sys.time(), "%Y-%m-%d_%H-%M-%S"),
     savepath=paste0(tempdir(), "/"),
     GameName="Game_",
     PeriodName="_Period_"){
