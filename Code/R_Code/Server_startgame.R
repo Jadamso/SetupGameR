@@ -81,7 +81,7 @@ GameInit <- compiler::cmpfun( function(
     ## Read by server.R 
     save(list=ls(all.names=TRUE), file=param_file)
    
-    cat("Total Periods: ", nperiods + npractice, "\n")
+    cat("Total Periods: ", nperiods, "\n")
 })
 
 
