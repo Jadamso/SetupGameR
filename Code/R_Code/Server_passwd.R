@@ -139,7 +139,6 @@ passwd_maker <- compiler::cmpfun( function(
 #' @param n number of student participants
 #' @param passwd what password
 #' @param sys if TRUE execute the bash script
-#' @param passfile what file holds the passwords
 #' @param gdir location of host Game folder
 #' @param pfile name of file to hold the passwords
 #' @param add_admin also reset admin password [NOT YET WORKING]
@@ -156,14 +155,13 @@ passwd_maker0 <- compiler::cmpfun( function(
     passwd="TrialAuction",
     create=FALSE,
     sys=FALSE,
-    passfile="/srv/shiny-server/passwd",
     gdir="/etc/shiny-server/",
     pfile="passwd",
     add_admin=TRUE) {
 
+    passfile <- paste0(gdir,pfile)
     
     ## Create File with Admin
-    passfile <- paste0(gdir,pfile)
     SetupGameR::sspasswd("admin", passwd,
         create=TRUE, sys=TRUE, passfile=passfile)
 
@@ -172,12 +170,10 @@ passwd_maker0 <- compiler::cmpfun( function(
         n=n, groupsize=1)[,"ID"]
     USERS <- paste0(user_append, Class)
     
-    lapply(USERS, FUN=sspasswd,
-        passwd=passwd,
-        create=FALSE,
-        sys=sys,
-        passfile=passfile
-    )
+    sapply( USERS, function(user){
+        SetupGameR::sspasswd(user, passwd,
+        create=FALSE, sys=sys, passfile=passfile)
+    })
     
     return(passwd)
 

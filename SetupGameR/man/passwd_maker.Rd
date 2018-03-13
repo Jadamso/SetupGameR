@@ -9,8 +9,8 @@ passwd_maker(Participants = NA, passwd = "TrialAuction",
   gdir = "/etc/shiny-server/", pfile = "passwd")
 
 passwd_maker0(n = 20, user_append = "JA", passwd = "TrialAuction",
-  create = FALSE, sys = FALSE, passfile = "/srv/shiny-server/passwd",
-  gdir = "/etc/shiny-server/", pfile = "passwd", add_admin = TRUE)
+  create = FALSE, sys = FALSE, gdir = "/etc/shiny-server/",
+  pfile = "passwd", add_admin = TRUE)
 }
 \arguments{
 \item{Participants}{student participants}
@@ -26,8 +26,6 @@ passwd_maker0(n = 20, user_append = "JA", passwd = "TrialAuction",
 \item{create}{overwrite and create new passwd_file [CURRENTLY done with new admin]}
 
 \item{sys}{if TRUE execute the bash script}
-
-\item{passfile}{what file holds the passwords}
 
 \item{add_admin}{also reset admin password [NOT YET WORKING]}
 
