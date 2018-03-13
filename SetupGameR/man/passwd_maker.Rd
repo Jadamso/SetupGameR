@@ -2,10 +2,14 @@
 % Please edit documentation in R/Server_passwd.R
 \name{passwd_maker}
 \alias{passwd_maker}
+\alias{passwd_maker0}
 \title{Create Passwords for List of Players}
 \usage{
 passwd_maker(Participants = NA, passwd = "TrialAuction",
   gdir = "/etc/shiny-server/", pfile = "passwd")
+
+passwd_maker0(n = 20, passwd = "TrialAuction",
+  gdir = "/etc/shiny-server/", pfile = "passwd", add_admin = TRUE)
 }
 \arguments{
 \item{Participants}{student participants}
@@ -15,10 +19,24 @@ passwd_maker(Participants = NA, passwd = "TrialAuction",
 \item{gdir}{location of host Game folder}
 
 \item{pfile}{name of file to hold the passwords}
+
+\item{n}{number of student participants}
+
+\item{add_admin}{also reset admin password [NOT YET WORKING]}
+
+\item{passwd}{what password}
+
+\item{gdir}{location of host Game folder}
+
+\item{pfile}{name of file to hold the passwords}
 }
 \value{
 a string to be executed by system()
+
+a string to be executed by system()
 }
 \description{
+Create Passwords for List of Players
+
 Create Passwords for List of Players
 }

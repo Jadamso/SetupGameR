@@ -135,7 +135,7 @@ passwd_maker <- compiler::cmpfun( function(
 ##################
 #' Create Passwords for List of Players
 ##################
-#' @rdname passwd_maker0
+#' @rdname passwd_maker
 #' @param n number of student participants
 #' @param passwd what password
 #' @param gdir location of host Game folder
