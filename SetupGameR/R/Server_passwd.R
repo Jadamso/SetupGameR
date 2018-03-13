@@ -169,7 +169,7 @@ passwd_maker0 <- compiler::cmpfun( function(
 
     Class <- SetupGameR::create_playergroups(
         n=n, groupsize=1)[,"ID"]
-    USERS <- paste0(user_append, USERS)
+    USERS <- paste0(user_append, Class)
     
     ## Players created in DoubleAuction/PlayerSetup/PlayerSetup.R
     ## "JA" was appended to each ID
