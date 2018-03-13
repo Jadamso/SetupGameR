@@ -81,7 +81,7 @@ GameInit <- compiler::cmpfun( function(
     ## Read by server.R 
     save.image(file=param_file)
    
-    cat("GameLength: ", etime, "\n")
+    cat("Total Periods: ", nperiods + npractice, "\n")
 })
 
 
