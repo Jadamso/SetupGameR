@@ -3,15 +3,20 @@ Function and Libraries for Shiny Experiments
 
 ## To install latest release from Github: 
 
-    devtools::install_github("Jadamso/SetupGameR",subdir="SetupGameR")
-    citation("SetupGameR")
+```r
 
+devtools::install_github("Jadamso/SetupGameR",subdir="SetupGameR")
+citation("SetupGameR")
+
+```
 ## Pre-reqs
 
-    devtools::install_github("Jadamso/MiscUtils",subdir="MiscUtils")
-    devtools::install_github("Jadamso/GeoCleanR",subdir="GeoCleanR")
+```r
 
+devtools::install_github("Jadamso/MiscUtils",subdir="MiscUtils")
+devtools::install_github("Jadamso/GeoCleanR",subdir="GeoCleanR")
 
+```
 
 
 
@@ -25,8 +30,8 @@ Follow the instructions at https://github.com/Jadamso/ClusterInstall/blob/master
 
 ```bash
 
-    git clone https://github.com/Jadamso/ClusterInstall.git
-    cat ClusterInstall/README_AWS.md
+git clone https://github.com/Jadamso/ClusterInstall.git
+cat ClusterInstall/README_AWS.md
 
 ```
 <!---
@@ -42,11 +47,11 @@ After SSH-ing into Amazon Instance and becoming the dedicated shiny-user (`su - 
 
 ```bash
 
-    wget https://s3.amazonaws.com/rstudio-shiny-server-pro-build/centos6.3/x86_64/shiny-server-commercial-1.5.4.872-rh6-x86_64.rpm 
+wget https://s3.amazonaws.com/rstudio-shiny-server-pro-build/centos6.3/x86_64/shiny-server-commercial-1.5.4.872-rh6-x86_64.rpm 
 
-    sudo yum install --nogpgcheck shiny-server-commercial-1.5.4.872-rh6-x86_64.rpm
+sudo yum install --nogpgcheck shiny-server-commercial-1.5.4.872-rh6-x86_64.rpm
 
-    sudo /opt/shiny-server/bin/license-manager activate XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX
+sudo /opt/shiny-server/bin/license-manager activate XXXX-XXXX-XXXX-XXXX-XXXX-XXXX-XXXX
 
 ```
 
