@@ -167,17 +167,16 @@ passwd_maker0 <- compiler::cmpfun( function(
     SetupGameR::sspasswd("admin", passwd,
         create=TRUE, sys=TRUE, passfile=passfile)
 
+    ## Add N students with same Password
     Class <- SetupGameR::create_playergroups(
         n=n, groupsize=1)[,"ID"]
     USERS <- paste0(user_append, Class)
     
-    ## Players created in DoubleAuction/PlayerSetup/PlayerSetup.R
-    ## "JA" was appended to each ID
-    mapply(SetupGameR::sspasswd, USERS, PASSWDS,
-        MoreArgs=list(
-            create=FALSE,
-            passfile=passfile,
-            sys=sys))
+    lapply(USERS,
+        passwd=passwd,
+        create=FALSE,
+        passfile=passfile,
+        sys=sys)
     
     return(passwd)
 
