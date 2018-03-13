@@ -137,6 +137,14 @@ Put all 3 end-of-game modules together into a module so that `SetupGameR::PostGa
 
 General Usage
 
+#### Task 4AA
+
+Make PasswordSetup.sh usable for any experiment
+
+ * Make New SetupGameR::passwd_maker0
+  - takes ADMIN=TRUE/FALSE as argument
+
+        
 #### Task 4A
 
 Assign a button so that students can click and reload page if frozen.

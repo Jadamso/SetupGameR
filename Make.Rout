@@ -120,10 +120,10 @@ _R_CHECK_CRAN_INCOMING_           : FALSE
 _R_CHECK_FORCE_SUGGESTS_          : FALSE
 Checking SetupGameR -----------------------------------------------------------
 '/home/Jadamso/lib64/R/bin/R' --no-site-file --no-environ --no-save  \
-  --no-restore --quiet CMD check '/tmp/RtmpwwvK9O/SetupGameR_0.1.2.tar.gz'  \
+  --no-restore --quiet CMD check '/tmp/RtmpCiaTXB/SetupGameR_0.1.2.tar.gz'  \
   --as-cran --timings --no-manual 
 
-* using log directory ‘/tmp/RtmpwwvK9O/SetupGameR.Rcheck’
+* using log directory ‘/tmp/RtmpCiaTXB/SetupGameR.Rcheck’
 * using R version 3.4.1 (2017-06-30)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
@@ -204,6 +204,7 @@ Writing create_playergroups.Rd
 Writing sspasswd.Rd
 Writing sspasswd_cmd.Rd
 Writing passwd_maker.Rd
+Writing passwd_maker0.Rd
 Writing idsheet_default.Rd
 Writing IDsheet.Rd
 Writing player_maker.Rd

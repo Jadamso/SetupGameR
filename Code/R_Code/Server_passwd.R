@@ -127,3 +127,49 @@ passwd_maker <- compiler::cmpfun( function(
     return(passwd)
 
 })
+
+
+
+
+#------------------------------------------------------------------
+##################
+#' Create Passwords for List of Players
+##################
+#' @rdname passwd_maker0
+#' @param n number of student participants
+#' @param passwd what password
+#' @param gdir location of host Game folder
+#' @param pfile name of file to hold the passwords
+#' @param add_admin also reset admin password [NOT YET WORKING]
+
+#' @return a string to be executed by system()
+# @examples
+#' 
+#' @export
+
+passwd_maker0 <- compiler::cmpfun( function(
+    n=20,
+    passwd="TrialAuction",
+    gdir="/etc/shiny-server/",
+    pfile="passwd",
+    add_admin=TRUE) {
+
+    
+    ## Create File with Admin
+    passfile <- paste0(gdir,pfile)
+    sspasswd("admin", passwd,
+        create=TRUE, sys=TRUE, passfile=passfile)
+
+    Class <- SetupGameR::create_playergroups(
+        n=n, groupsize=1)[,c("Name", "ID")]
+    Participants <- split(Class, Class$ID)      
+    
+    ## Players created in DoubleAuction/PlayerSetup/PlayerSetup.R
+    ## "JA" was appended to each ID
+    sspasswd_cmd(Participants, passwd,
+        create=FALSE, sys=TRUE, passfile=passfile)
+    
+    return(passwd)
+
+})
+
