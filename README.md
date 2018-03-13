@@ -1,10 +1,11 @@
 # SetupGameR
 Function and Libraries for Shiny Experiments
 
-## To install latest release from Github: 
+## To install latest release from Github within R: 
 
 ```r
 
+ # install.packages("devtools")
 devtools::install_github("Jadamso/SetupGameR",subdir="SetupGameR")
 citation("SetupGameR")
 
