@@ -172,11 +172,12 @@ passwd_maker0 <- compiler::cmpfun( function(
         n=n, groupsize=1)[,"ID"]
     USERS <- paste0(user_append, Class)
     
-    lapply(USERS,
+    lapply(USERS, FUN=sspasswd,
         passwd=passwd,
         create=FALSE,
-        passfile=passfile,
-        sys=sys)
+        sys=sys,
+        passfile=passfile
+    )
     
     return(passwd)
 
