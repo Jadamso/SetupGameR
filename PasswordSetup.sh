@@ -60,7 +60,7 @@ then
     R_out="$ServerLogDir/PassWord_$DATE.Rout"
     
     echo "
-        SetupGameR::passwd_maker0( $N, passwd=\"$PASSWD\")
+        SetupGameR::passwd_maker0( $N, passwd=\"$PASSWD\", sys=TRUE)
         " &>> $R_in
     
     R CMD BATCH --quiet --no-save $R_in $R_out
