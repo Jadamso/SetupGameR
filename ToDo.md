@@ -19,14 +19,19 @@ In Web-Browser: http://127.0.0.1:3329?user=JA1
 
 In server.R
 
+```r
+
     user <- parseQueryString(session$clientData$url_search)[['user']]
 
     ## Outside of any function  ->
     cat( file=stderr(), "User: ", user, "\n")
 
+```
 
 #### Task 1B
 Allow initialize button in `SetupGameR::InitializeUI("init")` to execute by either hitting "Enter" on the keyboard or by clicking the button
+
+```r
  
     $(document).keyup(function(event) {
         if ($("#number").is(":focus") && (event.keyCode == 13)) {
@@ -34,7 +39,7 @@ Allow initialize button in `SetupGameR::InitializeUI("init")` to execute by eith
         }
     });
 
-
+```
 
 
 
@@ -46,9 +51,13 @@ Improve App Initialization
 #### Task 2A
 Optimize init modules
 
+```
+
     SetupGameR::InitializeUI("init")
     SetupGameR::InitializeUI2("init")
-    
+
+```
+ 
 I currently have a latency spike at this points in the code
 
 #### Task 2B
@@ -72,10 +81,12 @@ Create module so that `SetupGameR::StartGame` performs
 
 Put all 2 start-of-game modules together into a module so that `SetupGameR::InitGame` performs 
 
+```r
+
     SetupGameR::Initialize
     SetupGameR::StartGame
 
-
+```
 
 
 
@@ -92,16 +103,21 @@ Improve Post-Game Survey
 
 Optimize current modules
 
+```r
+
     callModule( SetupGameR::StartSurvey, "survey", ...
     
     callModule( SetupGameR::ViewPayment, "payment", ...
 
+```
 
 I currently have a latency spike at these points in the code
     
 #### Task 3B
 
 Modularize Switch Panels so that `SetupGameR::StopGame` performs
+
+```r
 
     observeEvent(GlobalTriggers$ShowSurvey,
         ignoreNULL=TRUE, ignoreInit=TRUE,{
@@ -118,6 +134,7 @@ Modularize Switch Panels so that `SetupGameR::StopGame` performs
         }
     })
 
+```
 
 #### Task 3C
 
