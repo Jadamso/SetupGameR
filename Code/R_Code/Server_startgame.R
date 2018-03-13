@@ -79,7 +79,7 @@ GameInit <- compiler::cmpfun( function(
     ...){
     
     ## Read by server.R 
-    save.image(file=param_file)
+    save(list=ls(all.names=TRUE), file=param_file)
    
     cat("Total Periods: ", nperiods + npractice, "\n")
 })
