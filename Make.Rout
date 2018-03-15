@@ -27,7 +27,7 @@ source('/home/Jadamso/Desktop/Common/R_Code/RCheats.R')
 wideScreen() 
 
 [38;5;11m     USER INFORMATION: [0m
-Jordan Adamson, 2018-03-13
+Jordan Adamson, 2018-03-14
 
 > #-------------------------------------------------------------------
 > ##################
@@ -67,8 +67,8 @@ Depends: R (>= 3.4.1)
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
-Published: 2018-03-13
-Date: 2018-03-13
+Published: 2018-03-14
+Date: 2018-03-14
 URL: https://sites.google.com/a/g.clemson.edu/ja-resources
 
 To cite package 'SetupGameR' in publications use:
@@ -120,10 +120,10 @@ _R_CHECK_CRAN_INCOMING_           : FALSE
 _R_CHECK_FORCE_SUGGESTS_          : FALSE
 Checking SetupGameR -----------------------------------------------------------
 '/home/Jadamso/lib64/R/bin/R' --no-site-file --no-environ --no-save  \
-  --no-restore --quiet CMD check '/tmp/RtmpD0PQDw/SetupGameR_0.1.2.tar.gz'  \
+  --no-restore --quiet CMD check '/tmp/Rtmp4jlanE/SetupGameR_0.1.2.tar.gz'  \
   --as-cran --timings --no-manual 
 
-* using log directory ‘/tmp/RtmpD0PQDw/SetupGameR.Rcheck’
+* using log directory ‘/tmp/Rtmp4jlanE/SetupGameR.Rcheck’
 * using R version 3.4.1 (2017-06-30)
 * using platform: x86_64-pc-linux-gnu (64-bit)
 * using session charset: UTF-8
@@ -182,7 +182,7 @@ Warning: @title [Module_Initialize.R#1]: requires a value
 Warning: @description [Module_Initialize.R#1]: requires a value
 Warning: @return [Module_Initialize.R#57]: requires a value
 Warning: @return [Module_Survey.R#9]: requires a value
-Warning: @return [Module_Survey.R#108]: requires a value
+Warning: @return [Module_Survey.R#112]: requires a value
 Writing NAMESPACE
 Writing random.payouts.Rd
 Writing utimeLeft.Rd

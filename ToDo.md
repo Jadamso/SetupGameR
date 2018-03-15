@@ -156,11 +156,12 @@ General Usage
 
 #### Task 4AA
 
-Make PasswordSetup.sh usable for any experiment
+Make `PasswordSetup.sh` usable for any experiment
 
- * Make New SetupGameR::passwd_maker0
-  - takes ADMIN=TRUE/FALSE as argument
+ * Make `SetupGameR::passwd_maker0` takes ADMIN=TRUE/FALSE as argument
 
+
+Make `SessionStop.sh` usable for any experiment
         
 #### Task 4A
 
