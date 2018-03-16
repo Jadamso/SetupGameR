@@ -58,7 +58,7 @@ StartSurvey <- compiler::cmpfun( function(input, output, session,
             duration=Inf, closeButton=FALSE,
             type="error")
         showNotification(
-            "Hand Away from Computer",
+            "Hands Away from Computer",
             duration=Inf, closeButton=FALSE,
             type="default")
         showNotification(
