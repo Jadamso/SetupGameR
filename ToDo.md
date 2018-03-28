@@ -160,6 +160,9 @@ to switch from Inititial Page to Game Page to Survey Page.
 
 General Usage
 
+#### Task 4AA 
+
+Make Survey a Standalone Application to be hosted on emergency shutdown
 
 #### Task 4A
 
