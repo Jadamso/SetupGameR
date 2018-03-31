@@ -70,3 +70,48 @@ For a full game setup, see
  git reset --hard origin/master
  git pull origin master
 -->
+
+## Monitor Usage
+
+Use `atop` to create detailed logs of computer usage
+
+```bash
+ ## To Start recording every 600 seconds
+sudo /usr/bin/atop -a -w /var/log/atop.log 600 &
+
+ ## To Stop recording
+ps auxwww | grep atop
+ ## MYPID is 2nd Column
+kill -15 MYPID
+
+```
+
+
+Use `sar` to create detailed logs of network usage
+
+```bash
+
+ ## Print records every 10 mins 
+ ## Edit /etc/cron.d/sysstat to Change Default recording
+sar
+
+ ## Print 10 Records every 5 Seconds 
+sar 5 10
+
+
+```
+
+
+<!-- ## Observe CPU usage
+
+USE atop
+
+Alternatively
+
+tmux 
+
+DATE=$(date "+%F_%T" | sed 's/:/-/g' )
+MYPID=18211
+top -b -n 1000 -d 5 -p "$MYPID" | grep --line-buffered "$MYPID" > ~/Desktop/Packages/TerritoryR/Server/ServerLogs/CPUlog_"$TREATMENT"_"$NPLAYER"_"$SESSION"_Click.txt
+
+-->

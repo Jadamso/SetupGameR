@@ -162,7 +162,8 @@ General Usage
 
 #### Task 4AA 
 
-Make Survey a Standalone Application to be hosted on emergency shutdown
+Make Survey a Standalone Application (hosted on emergency shutdown) read in data files that display earnings to students.
+
 
 #### Task 4A
 
@@ -225,7 +226,11 @@ Best way to collect user data all at once.
 
 General Usage (Low Priority)
 
+#### Task 5AA
+implement client-side rendering
 
+ * For Tables: https://rstudio.github.io/DT/
+ * For RasterMaps: http://jkunst.com/highcharter/index.html
 
 #### Task 5A 
 
@@ -260,3 +265,14 @@ Mathjax can be used as a gate into the web. * Mathjax -> about -> mathjax about 
 
 #### Task 5E
 Temporary Timeout Game if lag is too high
+
+
+#### Task 5F
+
+Are there any local hosting options?
+
+My setup is: AWS + shiny-server-pro
+
+is local hosting a viable alternative: local PC + shiny-server ?
+
+
