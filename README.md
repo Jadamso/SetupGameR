@@ -86,6 +86,13 @@ kill -15 MYPID
 
 ```
 
+<!-- ## Observe CPU usage Alternative
+tmux 
+DATE=$(date "+%F_%T" | sed 's/:/-/g' )
+MYPID=18211
+top -b -n 1000 -d 5 -p "$MYPID" | grep --line-buffered "$MYPID" > ~/Desktop/Packages/TerritoryR/Server/ServerLogs/CPUlog_"$TREATMENT"_"$NPLAYER"_"$SESSION"_Click.txt
+-->
+
 
 Use `sar` to create detailed logs of network usage
 
@@ -102,16 +109,23 @@ sar 5 10
 ```
 
 
-<!-- ## Observe CPU usage
 
-USE atop
+# Join Game from Student Computers
+---
 
-Alternatively
 
-tmux 
+Parallel SSH 
 
-DATE=$(date "+%F_%T" | sed 's/:/-/g' )
-MYPID=18211
-top -b -n 1000 -d 5 -p "$MYPID" | grep --line-buffered "$MYPID" > ~/Desktop/Packages/TerritoryR/Server/ServerLogs/CPUlog_"$TREATMENT"_"$NPLAYER"_"$SESSION"_Click.txt
 
--->
+firefox ...
+
+
+
+
+
+
+
+
+
+
+

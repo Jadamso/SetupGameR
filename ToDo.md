@@ -12,7 +12,7 @@ Declare user from url inside server.R and access outside of `observe`
 See https://stackoverflow.com/questions/49212027/how-to-declare-unique-users-in-rshiny 
 
 
-In Web-Browser: http://127.0.0.1:3329?username=JA1
+In Web-Browser: http://127.0.0.1:3329?username=Jordan
 
 
 In server.R
@@ -90,9 +90,14 @@ Put all 2 start-of-game modules together into a module so that `SetupGameR::Init
 ```
 
 
+#### Task 2D
 
+Make InitScreen a standalone package
 
-
+```bash
+ln -sf ~/"Desktop/Packages/SetupGameR/Server/InitScreen/" \
+    "/srv/shiny-server/HOSTDIR/GAME"
+```
 
 
 ## Task 3
@@ -185,6 +190,11 @@ if( all(GlobClass$Ready) ) {
 ```
 But GlobClass will never have all elements ready if a computer is logged out
 
+Suggested Fix: On page refresh, make user 1 reset the period ID then put everyone to the beginning of the reactive sequence
+This would likely be a seperate `observeEvent` or perhabs located in the hub-switch
+
+Suggested Fix: On Disconnect, set most of users `triggers <<- TRUE` so that it is easy to continue on reconnection.
+Be careful not to make it so the game proceeds without the user though.
 
 ## Task 4B
 
@@ -197,11 +207,9 @@ But it would be desireable to prevent dual logins altogether.
 ## Task 4C
 
 Handle All SessionNames as strings
-```r
 
-SetupGameR::GameInit(
-        SessionName=\"$SessionName\",
-        
+```r
+SetupGameR::GameInit( SessionName=\"$SessionName\" )
 ```
 
 SessionName=001 converts to SessionName=1, which can create bugs
