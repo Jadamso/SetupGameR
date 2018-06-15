@@ -5,7 +5,7 @@ Function and Libraries for Shiny Experiments
 
 ```r
 
- # install.packages("devtools")
+# install.packages("devtools")
 devtools::install_github("Jadamso/SetupGameR",subdir="SetupGameR")
 citation("SetupGameR")
 
